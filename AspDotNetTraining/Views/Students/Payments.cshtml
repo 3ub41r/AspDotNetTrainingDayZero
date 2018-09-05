@@ -1,0 +1,37 @@
+﻿@model AspDotNetTraining.ViewModels.StudentsIndexViewModel
+@{
+    ViewBag.Title = "Student's Payments";
+}
+
+<h2>Student's Payments</h2>
+
+<h3>@Model.Student.Name</h3>
+
+<h3>Senarai Pembayaran</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Keterangan</th>
+        <th>Jumlah</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var payment in Model.Payments)
+    {
+        var danger = payment.Amount > 100 ? "danger" : null;
+
+        <tr class="@danger">
+            <td>@payment.Description</td>
+            <td>
+                RM@(payment.Amount)
+                
+                @if (danger != null)
+                {
+                    <span class="label label-danger">Mahal!</span>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

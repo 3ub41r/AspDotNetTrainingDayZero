@@ -1,0 +1,26 @@
+﻿@model AspDotNetTraining.Models.Student
+@{
+    ViewBag.Title = "New Student";
+}
+
+<h2>New Student</h2>
+
+@using (Html.BeginForm("Store", "Crud"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.IcNumber, "IC Number")
+        @Html.TextBoxFor(m => m.IcNumber, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MatricNumber, "Matric Number")
+        @Html.TextBoxFor(m => m.MatricNumber, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}

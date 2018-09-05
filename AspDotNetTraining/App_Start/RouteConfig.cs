@@ -13,6 +13,9 @@ namespace AspDotNetTraining
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Enable custom routes
+            routes.MapMvcAttributeRoutes();
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

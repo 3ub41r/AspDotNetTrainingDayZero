@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AspDotNetTraining.Models.Student>
+@{
+    ViewBag.Title = "Senarai Pelajar Dapper";
+}
+
+<h2>Senarai Pelajar Dapper</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nama</th>
+        <th>No. Matrik</th>
+        <th>No. KP</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.Name</td>
+            <td>@student.MatricNumber</td>
+            <td>@student.IcNumber</td>
+        </tr>
+    }
+    </tbody>
+</table>

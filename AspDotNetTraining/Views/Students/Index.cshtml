@@ -1,0 +1,33 @@
+﻿@model AspDotNetTraining.ViewModels.StudentsIndexViewModel
+@{
+    ViewBag.Title = "Student Profile";
+}
+
+<h2>
+    Student Profile (@Model.Payments.Count payments)
+</h2>
+
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Name</th>
+        <td>
+            @Model.Student.Name
+        </td>
+    </tr>
+    <tr>
+        <th>IC Number</th>
+        <td>@Model.Student.IcNumber</td>
+    </tr>
+    <tr>
+        <th>Matric Number</th>
+        <td>@Model.Student.MatricNumber</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
