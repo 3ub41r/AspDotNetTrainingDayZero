@@ -1,11 +1,16 @@
 ﻿@model AspDotNetTraining.Models.Student
 @{
+    var isEdit = Model.Id != 0;
+    var action = isEdit ? "Update" : "Store";
+
     ViewBag.Title = "New Student";
 }
 
-<h2>New Student</h2>
+<h2>
+    @(isEdit ? "Edit" : "New") Student
+</h2>
 
-@using (Html.BeginForm("Store", "Crud"))
+@using (Html.BeginForm(action, "Crud"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
@@ -21,6 +26,8 @@
         @Html.LabelFor(m => m.MatricNumber, "Matric Number")
         @Html.TextBoxFor(m => m.MatricNumber, new { @class = "form-control" })
     </div>
+
+    @Html.HiddenFor(m => m.Id)
 
     <button type="submit" class="btn btn-primary">Save</button>
 }

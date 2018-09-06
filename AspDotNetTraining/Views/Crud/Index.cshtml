@@ -11,15 +11,24 @@
         <th>Name</th>
         <th>Matric Number</th>
         <th>IC Number</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     @foreach (var student in @Model)
     {
         <tr>
-            <td>@student.Name</td>
+            <td>
+                @Html.ActionLink(student.Name, "Edit", new {id = student.Id})
+            </td>
             <td>@student.MatricNumber</td>
             <td>@student.IcNumber</td>
+            <td>
+                @using (Html.BeginForm("Delete", "Crud", new { id = student.Id }))
+                {
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                }
+            </td>
         </tr>
     }
     </tbody>
