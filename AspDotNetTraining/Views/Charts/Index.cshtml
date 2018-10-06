@@ -1,0 +1,39 @@
+﻿@model AspDotNetTraining.Controllers.ChartsCustomViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Chart Example</h2>
+
+<div id="amchart" style="width: 640px; height: 400px;"></div>
+
+
+@section scripts
+{
+    <script src="~/Scripts/amcharts/amcharts.js"></script>
+    <script src="~/Scripts/amcharts/serial.js"></script>
+
+    <script>
+        var chartData = @Html.Raw(Json.Encode(Model.ChartsDatas));
+
+        AmCharts.makeChart("amchart",
+            {
+                "type": "serial",
+                "dataProvider": chartData,
+                "categoryField": "country",
+                "graphs": [{
+                    "valueField": "visits",
+                    "type": "column",
+                    "fillAlphas": 0.8,
+                    "angle": 30,
+                    "depth3D": 15,
+                    "categoryAxis": {
+                        "autoGridCount": false,
+                        "gridCount": chartData.length,
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    }
+                }]
+            });
+    </script>
+}
