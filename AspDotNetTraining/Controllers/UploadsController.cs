@@ -40,7 +40,6 @@ namespace AspDotNetTraining.Controllers
 
                     // Map to model - and maybe store in database
                     model.Path = Url.Content(Path.Combine(basePath, fileName));
-
                 }
             }
 
