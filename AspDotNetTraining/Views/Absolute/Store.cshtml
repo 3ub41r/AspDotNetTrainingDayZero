@@ -1,0 +1,13 @@
+﻿@model AspDotNetTraining.Controllers.UploadsCustomViewModel
+
+@{
+    ViewBag.Title = "Absolute File";
+}
+
+<h1>Uploaded File to Absolute Path</h1>
+
+<h3>@Model.FileName</h3>
+
+<img src="@Url.Action("Show", new { filePath = Model.Path })" alt="Photo">
+
+@Html.ActionLink("Download File", "Show", new { filePath = Model.Path })

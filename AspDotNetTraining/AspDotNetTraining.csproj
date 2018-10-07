@@ -162,6 +162,7 @@
     <Compile Include="Areas\Staff\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Staff\StaffAreaRegistration.cs" />
     <Compile Include="Areas\Student\Controllers\SubjectsController.cs" />
+    <Compile Include="Controllers\AbsoluteController.cs" />
     <Compile Include="Controllers\AdminStudentController.cs" />
     <Compile Include="Controllers\ChartsController.cs" />
     <Compile Include="Controllers\CrudController.cs" />
@@ -548,6 +549,8 @@
     <Content Include="Views\Charts\Index.cshtml" />
     <Content Include="Views\Uploads\Index.cshtml" />
     <Content Include="Views\Uploads\Store.cshtml" />
+    <Content Include="Views\Absolute\Index.cshtml" />
+    <Content Include="Views\Absolute\Store.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Staff\Models\" />

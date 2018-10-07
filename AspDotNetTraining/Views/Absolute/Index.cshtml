@@ -1,0 +1,16 @@
+﻿@model AspDotNetTraining.Controllers.UploadsCustomViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Absolute Path Upload</h2>
+
+@using (Html.BeginForm("Store", "Absolute", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.TextBoxFor(m => m.FileName)
+
+    <input type="file" name="file" id="file" />
+
+    <button type="submit">Upload</button>
+}
+
