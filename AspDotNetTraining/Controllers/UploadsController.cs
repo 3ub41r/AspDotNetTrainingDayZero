@@ -26,13 +26,16 @@ namespace AspDotNetTraining.Controllers
 
                 if (fileName != null)
                 {
-                    var relativePath = Server.MapPath(basePath);
+                    // Generate a unique GUID for filename
+                    fileName = Guid.NewGuid() + Path.GetExtension(fileName);
+
+                    var absolutePath = Server.MapPath(basePath);
 
                     // Create directory if does not already exist
-                    Directory.CreateDirectory(relativePath);
+                    Directory.CreateDirectory(absolutePath);
 
                     // Save file
-                    var filePath = Path.Combine(relativePath, fileName);
+                    var filePath = Path.Combine(absolutePath, fileName);
                     file.SaveAs(filePath);
 
                     // Map to model - and maybe store in database
