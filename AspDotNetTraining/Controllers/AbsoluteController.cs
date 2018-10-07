@@ -42,8 +42,15 @@ namespace AspDotNetTraining.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Display file from file system.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         public ActionResult Show(string filePath)
         {
+            // Maybe perform authorization before serving file
+
             const string basePath = @"D:\temp\Uploads";
 
             var fileName = Path.GetFileName(filePath);
