@@ -167,6 +167,7 @@
     <Compile Include="Controllers\CrudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\UploadsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -545,6 +546,8 @@
     <Content Include="Views\Crud\Create.cshtml" />
     <Content Include="Views\Crud\Index.cshtml" />
     <Content Include="Views\Charts\Index.cshtml" />
+    <Content Include="Views\Uploads\Index.cshtml" />
+    <Content Include="Views\Uploads\Store.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Staff\Models\" />

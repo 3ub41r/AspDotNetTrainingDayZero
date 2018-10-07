@@ -1,0 +1,13 @@
+﻿@model AspDotNetTraining.Controllers.UploadsCustomViewModel
+
+@{
+    ViewBag.Title = "Tunjuk Gambo";
+}
+
+<h1>Uploaded File</h1>
+
+<h3>@Model.FileName</h3>
+
+<img src="@Url.Content(Model.Path)" alt="Photo">
+
+@Html.ActionLink("Download File", "Download", new { filePath = Model.Path })
